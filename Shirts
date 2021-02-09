@@ -1,0 +1,90 @@
+
+function Shirts(props) {
+  return <div>
+    <h3>{props.Shirt_Title}</h3>
+    <h4>{props.Shirt_Price}</h4>
+    <h5>{props.Shirt_Color}</h5>
+  </div>
+}
+
+export default function App() {
+
+  const the_shirts = [
+    {
+      "id": 1,
+      "title": "Football tshirt",
+      "manufacturer": "Adibas",
+      "price": "$10",
+      "rating": 3,
+      "availableColors": [
+        {
+          "name": "Red",
+          "color": "#FF0000"
+        },
+        {
+          "name": "Greenish",
+          "color": "#71CC71"
+        },
+        {
+          "name": "Kind of black",
+          "color": "#1C311C"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Running tshirt",
+      "manufacturer": "Kine",
+      "price": "$12",
+      "rating": 4,
+      "availableColors": [
+        {
+          "name": "Purple",
+          "color": "#782489"
+        },
+        {
+          "name": "Crimson",
+          "color": "#DB141B"
+        },
+        {
+          "name": "Lime",
+          "color": "#2A8D37"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Wedding tshirt",
+      "manufacturer": "Enorio Arbani",
+      "price": "$1999",
+      "rating": 5,
+      "availableColors": [
+        {
+          "name": "Royal Gold",
+          "color": "#2A8D37"
+        },
+        {
+          "name": "BlackAF",
+          "color": "#000000"
+        },
+        {
+          "name": "Ivory",
+          "color": "#EEEED3"
+        },
+        {
+          "name": "Candy",
+          "color": "#FA6BE0"
+        }
+      ]
+    }
+  ]
+
+  return (
+    <div>
+
+      {the_shirts.map((shirt) => <Shirts Shirt_Title={shirt.title} Shirt_Price={shirt.price}  
+       Shirt_Color={shirt.availableColors.name}/>)}
+
+    </div>
+  )
+}
